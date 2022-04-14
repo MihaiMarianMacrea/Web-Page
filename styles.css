@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@500&family=Merienda:wght@700&display=swap');
+
+/*
+    cand pornim in dezvoltarea unei pagini web,
+        pornim MOBILE FIRST si apoi incrementam pt tableta si desktop
+        responsive = arata bine pe toate dispozitivele
+*/
+
+body {
+    margin:0;
+    font-family: 'Eczar', serif;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 16px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 900;   /* 100-900 din 100 in 100 , unde 900 e cel mai bold */
+    text-transform: uppercase;
+    padding: 4px 8px;
+    font-size:12px;
+    color: white;
+}
+
+nav a:hover,  nav a:focus {   /*virgula desparte 2 selectii */
+    color: #ddd;
+    border:1px solid #ddd;
+    border-radius:4px;
+}
+
+h2.logo {
+    font-family: 'Merienda', cursive;
+    font-size:36px;
+    color: #00ff6c;
+    margin-bottom: 16px;
+}
+
+.first-section {
+    padding: 120px 0;   /* padding in sus si jos pt a dezvalui mai mult din poza*/
+    background-image: url('travel.jpeg');
+    background-size: cover;     /* cover -> respecta proportia imaginii (de ex 1/0.6) si trage practic de colturile imaginii pana acopera intreaga secitune pe care pui background*/
+    background-position: center;
+    color:#fff;
+}
+
+.container {
+        width: 80%;
+        max-width: 1000px;  /* te duci pe o latime de 80%, dar nu mai mult de 1000px */
+        margin: 0 auto;     /*centrare div*/
+}
+
+header {
+    position: absolute; /* scoate elementul din contextul actual in exterior
+                    din acest moment, nu mai functioneaza aici margin-left,  ci folosim direct directiile left, right...
+                */
+
+    top: -30px;
+    left: 0;
+    right: 0;
+}
+
+h1.title {
+    font-size:24px;
+    font-weight: bold;
+    line-height: 1.3;  /*din 0.1 in 0.1 da distanta dintre randuri*/
+}
+
+.title span {
+    font-size:18px;
+    font-weight: 300;
+    display: block;
+}
+
+.container .button {
+    color: #00ff6c;
+    border: 2px solid #00ff6c;
+    border-radius:4px;
+    padding: 10px 30px;
+    font-size:12px;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+
+.container .button:hover, .container .button:focus {
+    color: black;
+    background: #00ff6c;
+    transition: all 1s ease-in;
+}
+
+.second-container {
+    width:100%;
+    max-width:1000px;
+    margin:0 auto;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.textbox {
+    background: #232323;
+    color: white;
+    padding:10px 60px 60px 60px;
+    outline: 2px solid #00ff6c;
+    outline-offset: -40px;
+}
+
+.textbox h1 {
+       font-size: 24px;
+       color: #00ff6c;
+       position: relative;
+       left: 26px;
+       top: -12px;
+       background: #232323;
+       padding: 0px;
+       width: 120px;
+}
+
+
+/*toate proprietatile de PANA ACUM se aplica pe orice rezolutie*/
+
+
+
+@media(min-width:500px) {   /*de la 500 px in sus se vor aplica cele de sus + acestea: */
+    h1.title {
+        font-size:32px;
+        line-height: 1.5;
+    }
+
+    .title span {
+        font-size:24px;
+    }
+
+
+    p {
+        font-size:18px;
+    }
+}
+
+
+@media(min-width:1000px) {
+        h1.title {
+            font-size:40px;
+        }
+
+        nav {
+            float: right;
+        }
+
+        .logo  {
+            float:left;
+            margin-top:0;
+            margin-left:32px;
+        }
+
+        header {
+            top: 16px;
+        }
+
+        .second-container {
+            width:80%;
+            background-image: url('girl.jpg');
+            padding-bottom:200px;
+        }
+
+        .second-section {
+            max-width:500px;
+        }
+
+        .textbox{
+            position: relative;
+            top: -50px;
+            left: 50px;
+        }
+
+}
+
+
+/*
+    javascript  es5, es6
+    jquery -> write less do more
+
+    bootstrap = html + css + jquery
+
+*/
